@@ -8,5 +8,8 @@ script:
   - docker push jjino/4times:v1.3
 notifications:
   email:
-    - jinojoe@gmail.com
-    - jjino@protonmail.com
+    recipients:
+      - jinojoe@gmail.com
+      - jjino@protonmail.com
+    on_success: never
+    on_failure: always
