@@ -14,6 +14,3 @@ notifications:
       - jjino@protonmail.com
     on_success: always
     on_failure: always
-    template:
-      - "%{repository_slug} (%{commit}) : %{message}"
-      - "Build details: %{build_url}"
