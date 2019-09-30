@@ -2,11 +2,11 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t "$docker_username"/4times:v1.6 .
+  - docker build -t jjino/4times:v1.6 .
 script:
   - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
 	-	docer images
-  - docker push "$docker_username"/4times:v1.6
+  - docker push jjino/4times:v1.6
 notifications:
   email:
     recipients:
