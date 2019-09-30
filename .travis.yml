@@ -2,10 +2,10 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t jjino/test:latest .
+  - docker build -t jjino/4times:latest .
 script:
-  - docker run --rm jjino/test:latest vim --version
-  - docker ps -a
+  - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
+  - docker push
 notifications:
   email:
     - jinojoe@gmail.com
