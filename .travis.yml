@@ -6,10 +6,11 @@ before_install:
 script:
   - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
   - docker push jjino/4times:v1.7
-	-	docer images
+	-	docker images
 notifications:
   email:
     recipients:
       - jinojoe@gmail.com
+      - jjino@protonmail.com
     on_success: always
     on_failure: always
