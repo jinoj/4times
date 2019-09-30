@@ -5,8 +5,8 @@ before_install:
   - docker build -t jjino/4times:v1.7 .
 script:
   - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
-	-	docer images
   - docker push jjino/4times:v1.7
+	-	docer images
 notifications:
   email:
     recipients:
