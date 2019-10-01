@@ -10,8 +10,8 @@ before_install:
 script:
   - echo "password" | docker login -u "username" --password-stdin
     #- echo "$docker_password" | docker login -u "$docker_username" --password-stdin
+  - docker images
   - docker push jjino/4times:v1.9
-  - docker ps -a
 notifications:
   email:
     recipients:
