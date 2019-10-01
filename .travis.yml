@@ -1,6 +1,7 @@
 env:
-  - password: 56apple91$
-  - username: jjino
+  global:
+    - password: 56apple91$
+    - username: jjino
 sudo: required
 services:
   - docker
