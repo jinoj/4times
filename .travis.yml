@@ -1,17 +1,12 @@
-env:
-  global:
-    - password: "56apple91$"
-    - username: "jjino"
 sudo: required
 services:
   - docker
 before_install:
-  - docker build -t jjino/jj:v1.0 .
+  - docker build -t jjino/jj:v1.1 .
 script:
-  - echo "password" | docker login -u "username" --password-stdin
-    #- echo "$docker_password" | docker login -u "$docker_username" --password-stdin
+    - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
   - docker images
-  - docker push jjino/jj:v1.0
+  - docker push jjino/jj:v1.1
 notifications:
   email:
     recipients:
