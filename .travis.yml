@@ -11,6 +11,5 @@ notifications:
   email:
     recipients:
       - jinojoe@gmail.com
-      - jjino@protonmail.com
     on_success: always
     on_failure: always
