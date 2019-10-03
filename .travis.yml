@@ -2,7 +2,7 @@ sudo: required
 
 env:
   - username: jjino
-  - password: 56apple91$
+    password: 56apple91$
 
 services:
   - docker
