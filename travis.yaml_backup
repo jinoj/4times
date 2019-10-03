@@ -1,0 +1,16 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t jjino/jj:v1.1 .
+script:
+    - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
+  - docker images
+  - docker push jjino/jj:v1.1
+notifications:
+  email:
+    recipients:
+      - jinojoe@gmail.com
+      - jjino@protonmail.com
+    on_success: always
+    on_failure: always

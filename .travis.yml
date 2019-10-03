@@ -1,16 +1,22 @@
 sudo: required
+
+env:
+  - username: jjino
+  - password: 56apple91$
+
 services:
   - docker
+
 before_install:
-  - docker build -t jjino/jj:v1.1 .
+  - docker build -t jjino/jino-test:v1.5 .
+
 script:
-    - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
+  - 'echo $(password) | docker login -u $(username) --password-stdin'
   - docker images
-  - docker push jjino/jj:v1.1
+  - 'docker push $(username)/jino-test:v1.5'
 notifications:
   email:
     recipients:
       - jinojoe@gmail.com
-      - jjino@protonmail.com
     on_success: always
     on_failure: always
