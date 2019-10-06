@@ -1,6 +1,8 @@
+#Dockerfile
 FROM ubuntu:latest
-RUN apt update -y
-RUN apt install curl -y
-RUN apt install procps -y
-WORKDIR /usr
-MAINTAINER <jinojoe@gmail.com>
+LABEL maintainer="jinojoe@gmail.com"
+RUN apt-get update && \
+apt-get upgrade -y
+RUN apt-get install nginx -y
+EXPOSE 80
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
